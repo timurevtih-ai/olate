@@ -93,7 +93,7 @@ const statsIO = new IntersectionObserver(([e]) => {
   countUp(yEl, years); countUp(iEl, allItems.length);
   statsIO.disconnect();
 }, { threshold: 0.5 });
-statsIO.observe($('.hero__facts'));
+statsIO.observe($('.facts'));
 
 /* ---------------- Навигация ---------------- */
 const nav = $('#nav');
@@ -121,7 +121,7 @@ statement.innerHTML = words.map((w) => `<span class="w">${esc(w)}</span> `).join
 const wordEls = $$('.w', statement);
 
 /* ---------------- Фирменное: горизонтальная лента ---------------- */
-const SIGNATURE = ['trifle-adyg', 'chanfet', 'raf-urbech', 'san-sebastian', 'meringue-pistachio-slice', 'macaron-adyg', 'bumble-fresh', 'trifle-dubai', 'adyg-chocolate'];
+const SIGNATURE = ['adyg-chocolate', 'chanfet', 'trifle-adyg', 'macaron-adyg', 'chanfet-nosugar', 'raf-urbech', 'iced-latte-urbech', 'san-sebastian', 'meringue-pistachio-slice'];
 const sigTrack = $('#sigTrack');
 sigTrack.innerHTML = SIGNATURE.map((key, i) => {
   const it = byImg[key];
@@ -387,6 +387,8 @@ if (finePointer && !reduceMotion) {
 /* ---------------- Главный цикл прокрутки ---------------- */
 const progress = $('#progress');
 const hero = $('#top');
+const ingredients = $$('#ingredients li');
+const hint = $('.hero__hint');
 const cakesSection = $('#cakes');
 const drips = $('.cakes__drips');
 let lastY = scrollY, vel = 0, navHidden = false;
@@ -402,13 +404,18 @@ function loop() {
 
   // шапка: прячем при прокрутке вниз
   nav.classList.toggle('is-scrolled', y > 20);
+  nav.classList.toggle('is-dark', y < hero.offsetHeight - vh * 0.5);
   if (!nav.classList.contains('is-open')) {
     if (dy > 4 && y > 300 && !navHidden) { navHidden = true; nav.classList.add('is-hidden'); }
     else if (dy < -4 && navHidden) { navHidden = false; nav.classList.remove('is-hidden'); }
   }
 
   // 3D: прогресс первого экрана
-  if (scene) scene.setProgress(y / (hero.offsetHeight * 0.9));
+  const hp = clamp01(y / Math.max(1, hero.offsetHeight - vh));
+  if (scene) scene.setProgress(hp);
+  const ready = document.body.classList.contains('is-ready');
+  ingredients.forEach((li) => li.classList.toggle('is-on', ready && hp >= Number(li.dataset.at)));
+  hint.classList.toggle('is-gone', hp > 0.05);
 
   // бегущая строка — быстрее при прокрутке
   if (!reduceMotion && mWidth) {

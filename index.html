@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>О'ЛАТЕ — кондитерский дом и кофейня в Яблоновском</title>
+<title>О'ЛАТЕ — адыгский шоколад, десерты и кофе в Яблоновском</title>
 <meta name="description" content="Кондитерский дом О'ЛАТЕ: кофе с кавказским акцентом, трайфлы, макарон, торты, чанфет и адыгский шоколад собственного производства. Делаем вкусно с 2014 года.">
-<meta name="theme-color" content="#f3ede6">
+<meta name="theme-color" content="#160d09">
 <meta property="og:type" content="website">
 <meta property="og:title" content="О'ЛАТЕ — кондитерский дом">
 <meta property="og:description" content="Кофе с кавказским акцентом и десерты собственного производства. С 2014 года.">
-<meta property="og:image" content="img/trifle-adyg.webp">
+<meta property="og:image" content="img/adyg-chocolate.webp">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%232a1b14'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' text-anchor='middle' fill='%23f3ede6'%3EО%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,40 +57,36 @@
 
 <main>
 
-  <!-- HERO -->
+  <!-- HERO: адыгский шоколад в 3D -->
   <section class="hero" id="top">
-    <div class="hero__text">
-      <p class="eyebrow reveal">Кондитерский дом · с 2014 года</p>
-      <h1 class="hero__title" aria-label="О'ЛАТЕ">
-        <span class="hero__o" aria-hidden="true">О</span><span class="split" aria-hidden="true">'ЛАТЕ</span>
-      </h1>
-      <p class="hero__lead reveal">Кофе с&nbsp;кавказским акцентом и&nbsp;десерты собственного производства: трайфлы, макарон, торты, чанфет и&nbsp;адыгский шоколад.</p>
-      <div class="hero__actions reveal">
-        <a class="btn" href="#menu" data-magnetic>Смотреть меню</a>
-        <a class="btn btn--ghost" href="#places" data-magnetic>Где нас найти</a>
-      </div>
-      <ul class="hero__facts reveal">
-        <li><b data-count-years>12</b><span>лет делаем вкусно</span></li>
-        <li><b>3</b><span>кофейни-кондитерские</span></li>
-        <li><b data-count-items>100+</b><span>позиций в меню</span></li>
-      </ul>
-    </div>
-
-    <div class="hero__stage" id="stage">
-      <div class="hero__disc" aria-hidden="true"></div>
-      <img class="hero__fallback" src="img/latte.webp" alt="Латте с латте-артом в керамической чашке О'ЛАТЕ">
+    <div class="hero__sticky" id="stage">
       <canvas id="gl" aria-hidden="true"></canvas>
-      <div class="badge badge--a" aria-hidden="true"><span>Нажми на&nbsp;чашку</span></div>
-      <div class="badge badge--b" aria-hidden="true"><span>Халяль</span><small>сэндвичи и&nbsp;салаты</small></div>
+      <img class="hero__fallback" src="img/adyg-chocolate.webp" alt="Адыгский шоколад О'ЛАТЕ">
+      <div class="hero__text">
+        <p class="eyebrow eyebrow--light hero__eyebrow">Кондитерский дом О'ЛАТЕ<span class="hide-m">&nbsp;· с&nbsp;2014 года</span></p>
+        <h1 class="hero__title">
+          <span class="line"><span class="split">Адыгский</span></span>
+          <span class="line"><i class="split">шоколад</i></span>
+        </h1>
+        <p class="hero__lead">Изысканное сочетание нежного молочного шоколада, пикантного адыгейского сыра и&nbsp;ароматных черкесских орехов.</p>
+        <ol class="ingredients" id="ingredients">
+          <li data-at="0"><span>01</span>Молочный шоколад</li>
+          <li data-at="0.3"><span>02</span>Адыгейский сыр</li>
+          <li data-at="0.52"><span>03</span>Черкесский орех</li>
+        </ol>
+        <div class="hero__actions">
+          <button class="btn btn--cream" type="button" data-item="adyg-chocolate" data-magnetic>Адыгский шоколад · 550&nbsp;₽</button>
+          <a class="btn btn--ghost-light" href="#menu" data-magnetic>Всё меню</a>
+        </div>
+      </div>
+      <p class="hero__hint" aria-hidden="true"><span class="hero__mouse"></span><span class="hero__hint-text">Листайте — плитка раскроется</span></p>
     </div>
-
-    <a class="hero__scroll" href="#about" aria-label="Листать вниз"><span></span></a>
   </section>
 
   <!-- MARQUEE -->
   <div class="marquee" aria-hidden="true">
     <div class="marquee__track" id="marquee">
-      <span>Кофе</span><em>✦</em><span>Трайфлы</span><em>✦</em><span>Макарон</span><em>✦</em><span>Меренговые рулеты</span><em>✦</em><span>Чанфет</span><em>✦</em><span>Адыгский шоколад</span><em>✦</em><span>Торты</span><em>✦</em><span>Колд брю</span><em>✦</em>
+      <span>Адыгский шоколад</span><em>✦</em><span>Чанфет</span><em>✦</em><span>Черкесский орех</span><em>✦</em><span>Адыгейский сыр</span><em>✦</em><span>Трайфлы</span><em>✦</em><span>Макарон</span><em>✦</em><span>Кофе с&nbsp;урбечем</span><em>✦</em><span>Торты</span><em>✦</em>
     </div>
   </div>
 
@@ -98,14 +94,19 @@
   <section class="about" id="about">
     <p class="eyebrow reveal">О нас</p>
     <p class="statement" id="statement">Мы&nbsp;делаем вкусно с&nbsp;2014 года. Варим кофе с&nbsp;урбечем и&nbsp;финиками, собираем трайфлы и&nbsp;печём торты, а&nbsp;в&nbsp;сладости добавляем немного Кавказа — адыгейский сыр, черкесский орех и&nbsp;настоящий шоколад.</p>
+    <ul class="facts reveal">
+      <li><b data-count-years>12</b><span>лет делаем вкусно</span></li>
+      <li><b>3</b><span>кофейни-кондитерские</span></li>
+      <li><b data-count-items>100+</b><span>позиций в меню</span></li>
+    </ul>
     <div class="about__cards">
       <figure class="about__card reveal" data-tilt>
         <img src="img/chanfet.webp" alt="Чанфет — адыгейский сыр и черкесский орех в шоколаде" loading="lazy">
         <figcaption><b>Чанфет</b><span>адыгейский сыр и&nbsp;черкесский орех в&nbsp;шоколаде</span></figcaption>
       </figure>
       <figure class="about__card about__card--up reveal" data-tilt>
-        <img src="img/meringue-pistachio-slice.webp" alt="Меренговый рулет фисташковый" loading="lazy">
-        <figcaption><b>Меренговый рулет</b><span>хрустящая корочка и&nbsp;фисташковый крем</span></figcaption>
+        <img src="img/trifle-adyg.webp" alt="Трайфл Адыгский" loading="lazy">
+        <figcaption><b>Трайфл Адыгский</b><span>молочный шоколад и&nbsp;сливочная начинка</span></figcaption>
       </figure>
       <figure class="about__card reveal" data-tilt>
         <img src="img/raf-urbech.webp" alt="Раф урбеч" loading="lazy">
@@ -119,7 +120,7 @@
     <div class="signature__pin">
       <div class="signature__head">
         <p class="eyebrow">Фирменное</p>
-        <h2 class="h2">То, за&nbsp;чем<br><i>возвращаются</i></h2>
+        <h2 class="h2">С&nbsp;кавказским<br><i>акцентом</i></h2>
         <p class="signature__hint">листайте&nbsp;→</p>
       </div>
       <div class="signature__track" id="sigTrack"></div>

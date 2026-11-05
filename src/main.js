@@ -1,4 +1,5 @@
 import { initScene } from './scene.js';
+import { iconFor } from './icons.js';
 
 const D = window.OLATE;
 const $ = (s, r = document) => r.querySelector(s);
@@ -20,7 +21,7 @@ function priceHTML(it) {
   return `<span class="price__part">${rub(it.p)}</span>`;
 }
 const imgSrc = (name) => `img/${name}.webp`;
-const placeholderHTML = (it) => `<div class="ph" aria-hidden="true"><span>${esc(it.n.replace(/[«»"]/g, '').trim().charAt(0))}</span></div>`;
+const placeholderHTML = (it) => `<div class="ph" aria-hidden="true">${iconFor(it)}</div>`;
 
 /* ---------------- Загрузчик ---------------- */
 const loader = $('#loader');
@@ -312,7 +313,8 @@ function openItem(it) {
   const img = $('#modalImg');
   const media = $('.modal__media', modal);
   if (it.img) { img.src = imgSrc(it.img); img.alt = it.n; media.classList.remove('is-empty'); } else { img.removeAttribute('src'); img.alt = ''; media.classList.add('is-empty'); }
-  media.dataset.letter = it.n.replace(/[«»"]/g, '').trim().charAt(0);
+  const oldPh = $('.ph', media); if (oldPh) oldPh.remove();
+  if (!it.img) media.insertAdjacentHTML('beforeend', placeholderHTML(it));
   $('#modalCat').textContent = [it.cat.title, it.v, it.tag].filter(Boolean).join(' · ');
   $('#modalTitle').textContent = it.n;
   $('#modalDesc').textContent = it.d || 'Спросите о составе у бариста — с радостью расскажем.';

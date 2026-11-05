@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>О'ЛАТЕ — кондитерский дом и кофейня в Яблоновском</title>
+<meta name="description" content="Кондитерский дом О'ЛАТЕ: кофе с кавказским акцентом, трайфлы, макарон, торты, чанфет и адыгский шоколад собственного производства. Делаем вкусно с 2014 года.">
+<meta name="theme-color" content="#f3ede6">
+<meta property="og:type" content="website">
+<meta property="og:title" content="О'ЛАТЕ — кондитерский дом">
+<meta property="og:description" content="Кофе с кавказским акцентом и десерты собственного производства. С 2014 года.">
+<meta property="og:image" content="img/trifle-adyg.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%232a1b14'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' text-anchor='middle' fill='%23f3ede6'%3EО%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Кондитерский дом О'ЛАТЕ",
+  "servesCuisine": ["Кофе", "Десерты", "Кондитерские изделия"],
+  "priceRange": "₽₽",
+  "foundingDate": "2014",
+  "address": {"@type": "PostalAddress", "streetAddress": "ул. Гагарина, 144", "addressLocality": "пгт Яблоновский", "addressCountry": "RU"},
+  "telephone": "+79286681414"
+}
+</script>
+</head>
+<body>
+
+<!-- Загрузка -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__logo">
+    <span class="loader__o">О</span><span>'ЛАТЕ</span>
+  </div>
+  <div class="loader__bar"><i id="loaderBar"></i></div>
+</div>
+
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label">смотреть</span></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#top" aria-label="О'ЛАТЕ — наверх">
+    <span class="logo-o">О</span>'ЛАТЕ
+  </a>
+  <nav class="nav__links" id="navLinks" aria-label="Разделы">
+    <a href="#signature">Фирменное</a>
+    <a href="#menu">Меню</a>
+    <a href="#cakes">Торты</a>
+    <a href="#places">Адреса</a>
+  </nav>
+  <a class="btn btn--small nav__cta" href="tel:+79286681414" data-magnetic>Позвонить</a>
+  <button class="nav__burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="navLinks"><i></i><i></i></button>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero__text">
+      <p class="eyebrow reveal">Кондитерский дом · с 2014 года</p>
+      <h1 class="hero__title" aria-label="О'ЛАТЕ">
+        <span class="hero__o" aria-hidden="true">О</span><span class="split" aria-hidden="true">'ЛАТЕ</span>
+      </h1>
+      <p class="hero__lead reveal">Кофе с&nbsp;кавказским акцентом и&nbsp;десерты собственного производства: трайфлы, макарон, торты, чанфет и&nbsp;адыгский шоколад.</p>
+      <div class="hero__actions reveal">
+        <a class="btn" href="#menu" data-magnetic>Смотреть меню</a>
+        <a class="btn btn--ghost" href="#places" data-magnetic>Где нас найти</a>
+      </div>
+      <ul class="hero__facts reveal">
+        <li><b data-count-years>12</b><span>лет делаем вкусно</span></li>
+        <li><b>3</b><span>кофейни-кондитерские</span></li>
+        <li><b data-count-items>100+</b><span>позиций в меню</span></li>
+      </ul>
+    </div>
+
+    <div class="hero__stage" id="stage">
+      <div class="hero__disc" aria-hidden="true"></div>
+      <img class="hero__fallback" src="img/latte.webp" alt="Латте с латте-артом в керамической чашке О'ЛАТЕ">
+      <canvas id="gl" aria-hidden="true"></canvas>
+      <div class="badge badge--a" aria-hidden="true"><span>Нажми на&nbsp;чашку</span></div>
+      <div class="badge badge--b" aria-hidden="true"><span>Халяль</span><small>сэндвичи и&nbsp;салаты</small></div>
+    </div>
+
+    <a class="hero__scroll" href="#about" aria-label="Листать вниз"><span></span></a>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track" id="marquee">
+      <span>Кофе</span><em>✦</em><span>Трайфлы</span><em>✦</em><span>Макарон</span><em>✦</em><span>Меренговые рулеты</span><em>✦</em><span>Чанфет</span><em>✦</em><span>Адыгский шоколад</span><em>✦</em><span>Торты</span><em>✦</em><span>Колд брю</span><em>✦</em>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <p class="eyebrow reveal">О нас</p>
+    <p class="statement" id="statement">Мы&nbsp;делаем вкусно с&nbsp;2014 года. Варим кофе с&nbsp;урбечем и&nbsp;финиками, собираем трайфлы и&nbsp;печём торты, а&nbsp;в&nbsp;сладости добавляем немного Кавказа — адыгейский сыр, черкесский орех и&nbsp;настоящий шоколад.</p>
+    <div class="about__cards">
+      <figure class="about__card reveal" data-tilt>
+        <img src="img/chanfet.webp" alt="Чанфет — адыгейский сыр и черкесский орех в шоколаде" loading="lazy">
+        <figcaption><b>Чанфет</b><span>адыгейский сыр и&nbsp;черкесский орех в&nbsp;шоколаде</span></figcaption>
+      </figure>
+      <figure class="about__card about__card--up reveal" data-tilt>
+        <img src="img/meringue-pistachio-slice.webp" alt="Меренговый рулет фисташковый" loading="lazy">
+        <figcaption><b>Меренговый рулет</b><span>хрустящая корочка и&nbsp;фисташковый крем</span></figcaption>
+      </figure>
+      <figure class="about__card reveal" data-tilt>
+        <img src="img/raf-urbech.webp" alt="Раф урбеч" loading="lazy">
+        <figcaption><b>Раф урбеч</b><span>наш кофе с&nbsp;кавказским акцентом</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- SIGNATURE: горизонтальная прокрутка -->
+  <section class="signature" id="signature">
+    <div class="signature__pin">
+      <div class="signature__head">
+        <p class="eyebrow">Фирменное</p>
+        <h2 class="h2">То, за&nbsp;чем<br><i>возвращаются</i></h2>
+        <p class="signature__hint">листайте&nbsp;→</p>
+      </div>
+      <div class="signature__track" id="sigTrack"></div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu" id="menu">
+    <div class="menu__head">
+      <div>
+        <p class="eyebrow reveal">Меню</p>
+        <h2 class="h2 reveal">Всё, что мы&nbsp;готовим</h2>
+      </div>
+      <label class="search reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="search" placeholder="Найти: раф, трайфл, макарон…" autocomplete="off" aria-label="Поиск по меню">
+      </label>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Категории меню" id="tabs"></div>
+    <p class="menu__note" id="menuNote"></p>
+    <div class="grid" id="grid" aria-live="polite"></div>
+    <p class="menu__foot">Скидка постоянного гостя по&nbsp;карте лояльности действует на&nbsp;все позиции. Если у&nbsp;вас есть аллергия — уточните состав у&nbsp;бариста. Цены в&nbsp;рублях и&nbsp;могут отличаться от&nbsp;указанных на&nbsp;сайте.</p>
+  </section>
+
+  <!-- CAKES -->
+  <section class="cakes" id="cakes">
+    <svg class="cakes__drips" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path id="dripPath" d="M0 0h1440v40c-20 0-30 10-30 30v10a14 14 0 0 1-28 0V60c0-14-10-22-24-22s-22 8-22 22v40a14 14 0 0 1-28 0V58c0-12-8-18-20-18H900c-14 0-22 8-22 22v18a12 12 0 0 1-24 0V64c0-14-10-24-24-24H640c-12 0-20 8-20 20v34a14 14 0 0 1-28 0V62c0-14-10-22-22-22H380c-14 0-24 10-24 24v8a12 12 0 0 1-24 0v-8c0-14-10-24-24-24H170c-14 0-22 8-22 22v44a14 14 0 0 1-28 0V62c0-14-10-22-24-22H0z"/>
+    </svg>
+    <div class="cakes__inner">
+      <div class="cakes__head">
+        <div>
+          <p class="eyebrow eyebrow--light reveal">Торты и рулеты</p>
+          <h2 class="h2 h2--light reveal">Целиком — на&nbsp;праздник,<br><i>кусочком</i> — к&nbsp;кофе</h2>
+        </div>
+        <div class="toggle reveal" role="group" aria-label="Показать цены">
+          <button class="is-active" data-mode="0" aria-pressed="true">Целый торт</button>
+          <button data-mode="1" aria-pressed="false">Кусочек</button>
+          <i class="toggle__thumb"></i>
+        </div>
+      </div>
+      <div class="cakes__grid" id="cakesGrid"></div>
+    </div>
+  </section>
+
+  <!-- PLACES -->
+  <section class="places" id="places">
+    <p class="eyebrow reveal">Адреса</p>
+    <h2 class="h2 reveal">Заходите на&nbsp;кофе</h2>
+    <div class="places__grid" id="placesGrid"></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__logo"><span class="logo-o">О</span>'ЛАТЕ</div>
+  <p>Кондитерский дом · делаем вкусно с&nbsp;2014 года</p>
+  <p class="footer__small">© <span id="year">2026</span> О'ЛАТЕ. Фото — О'ЛАТЕ.</p>
+</footer>
+
+<!-- Карточка блюда -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+  <div class="modal__backdrop" data-close></div>
+  <article class="modal__card">
+    <button class="modal__close" data-close aria-label="Закрыть">×</button>
+    <div class="modal__media"><img id="modalImg" alt=""></div>
+    <div class="modal__body">
+      <p class="modal__cat" id="modalCat"></p>
+      <h3 id="modalTitle"></h3>
+      <p class="modal__desc" id="modalDesc"></p>
+      <div class="modal__price" id="modalPrice"></div>
+    </div>
+  </article>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
